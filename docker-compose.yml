@@ -1,21 +1,80 @@
 services:
+
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus
+    volumes:
+      - ./monitoring/prometheus:/etc/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/etc/prometheus/console_libraries'
+      - '--web.console.templates=/etc/prometheus/consoles'
+      - '--storage.tsdb.retention.time=200h'
+      - '--web.enable-lifecycle'
+    ports:
+      - "9090:9090"
+    depends_on:
+      - haproxy
+      - nginx
+      - php
+      - postgres
+    networks:
+      - monitoring
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    environment:
+      GF_SECURITY_ADMIN_PASSWORD: 'admin'
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./monitoring/grafana/provisioning:/etc/grafana/provisioning
+    depends_on:
+      - prometheus
+    networks:
+      - monitoring
+
+  nodeexporter:
+    image: prom/node-exporter:latest
+    container_name: nodeexporter
+    volumes:
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /:/rootfs:ro
+    command:
+      - '--path.procfs=/host/proc'
+      - '--path.rootfs=/rootfs'
+      - '--path.sysfs=/host/sys'
+      - '--collector.filesystem.ignored-mount-points=^/(sys|proc|dev|host|etc)($$|/)'
+    restart: unless-stopped
+    ports:
+      - "9100:9100"
+    networks:
+      - monitoring
+
   haproxy:
     image: haproxy:2.8
     container_name: haproxy
     volumes:
       - ./haproxy:/usr/local/etc/haproxy
+      - ./logs/haproxy:/var/log/haproxy
     ports:
       - "80:80"
     links:
       - nginx
     depends_on:
       - nginx
+    command: >
+      bash -c "haproxy -f /usr/local/etc/haproxy/haproxy.cfg > /var/log/haproxy/haproxy.log 2>&1"
   nginx:
     image: nginx:1.22.1
     container_name: nginx
     volumes:
       - ./php:/var/www/html
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - ./logs/nginx:/var/log/nginx
     expose:
       - 80
     depends_on:
@@ -24,11 +83,13 @@ services:
 
   php:
     build:
-      context: .
+      context: ./php
       dockerfile: Dockerfile
     container_name: php
     volumes:
       - ./php:/var/www/html
+      - ./logs/php:/var/log/php
+      - ./php/php.ini:/usr/local/etc/php/php.ini
     expose:
       - 9000
     depends_on:
@@ -39,9 +100,15 @@ services:
     container_name: postgres
     volumes:
       - ./postgres/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./logs/postgres:/var/log/postgresql
     environment:
       POSTGRES_USER: shumkin
       POSTGRES_PASSWORD: 123
       POSTGRES_DB: main
     ports:
       - "5432:5432"
+    command: ["postgres", "-c", "logging_collector=on", "-c", "log_directory=/var/log/postgresql", "-c", "log_filename=postgresql.log", "-c", "log_statement=all"]
+
+networks:
+  monitoring:
+    driver: bridge
