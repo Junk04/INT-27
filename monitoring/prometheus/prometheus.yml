@@ -13,12 +13,6 @@ scrape_configs:
       - target_label: job
         replacement: 'node'
 
-  - job_name: 'nginx'
+  - job_name: 'haproxy'
     static_configs:
-      - targets: ['nginx-exporter:9113']
-    metrics_path: '/metrics'
-    relabel_configs:
-      - source_labels: [__param_target]
-        target_label: instance
-      - target_label: job
-        replacement: 'nginx'
+    - targets: ['haproxy:8404']

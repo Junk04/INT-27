@@ -1,17 +1,4 @@
 services:
-
-  nginx-exporter:
-    image: nginx/nginx-prometheus-exporter:latest
-    container_name: nginx-exporter
-    ports:
-      - "9113:9113"  # Порт, через который будет доступен exporter
-    depends_on:
-      - nginx
-    environment:
-      - NGINX_STATUS_URI=/status  # Путь к статусу Nginx, который должен быть настроен в конфигурации Nginx
-    networks:
-      - monitoring
-
   prometheus:
     image: prom/prometheus:latest
     container_name: prometheus
@@ -37,8 +24,6 @@ services:
   grafana:
     image: grafana/grafana:latest
     container_name: grafana
-    environment:
-      GF_SECURITY_ADMIN_PASSWORD: 'admin'
     ports:
       - "3000:3000"
     volumes:
@@ -74,12 +59,16 @@ services:
       - ./logs/haproxy:/var/log/haproxy
     ports:
       - "80:80"
+      - "8404:8404"
     links:
       - nginx
     depends_on:
       - nginx
     command: >
       bash -c "haproxy -f /usr/local/etc/haproxy/haproxy.cfg > /var/log/haproxy/haproxy.log 2>&1"
+    networks:
+      - monitoring
+
   nginx:
     image: nginx:1.22.1
     container_name: nginx
@@ -89,10 +78,12 @@ services:
       - ./logs/nginx:/var/log/nginx
     expose:
       - 80
+      - 8080
     depends_on:
       - php
       - postgres
-
+    networks:
+      - monitoring
   php:
     build:
       context: ./php
@@ -106,6 +97,8 @@ services:
       - 9000
     depends_on:
       - postgres
+    networks:
+      - monitoring
 
   postgres:
     image: postgres:17.1
@@ -120,7 +113,8 @@ services:
     ports:
       - "5432:5432"
     command: ["postgres", "-c", "logging_collector=on", "-c", "log_directory=/var/log/postgresql", "-c", "log_filename=postgresql.log", "-c", "log_statement=all"]
-
+    networks:
+      - monitoring
 networks:
   monitoring:
     driver: bridge
