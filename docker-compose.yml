@@ -1,5 +1,17 @@
 services:
 
+  nginx-exporter:
+    image: nginx/nginx-prometheus-exporter:latest
+    container_name: nginx-exporter
+    ports:
+      - "9113:9113"  # Порт, через который будет доступен exporter
+    depends_on:
+      - nginx
+    environment:
+      - NGINX_STATUS_URI=/status  # Путь к статусу Nginx, который должен быть настроен в конфигурации Nginx
+    networks:
+      - monitoring
+
   prometheus:
     image: prom/prometheus:latest
     container_name: prometheus
@@ -38,7 +50,7 @@ services:
 
   nodeexporter:
     image: prom/node-exporter:latest
-    container_name: nodeexporter
+    container_name: node-exporter
     volumes:
       - /proc:/host/proc:ro
       - /sys:/host/sys:ro

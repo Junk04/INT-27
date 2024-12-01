@@ -194,3 +194,814 @@
 2024-12-01 15:47:19.149 UTC [66] LOG:  checkpoint starting: shutdown immediate
 2024-12-01 15:47:19.163 UTC [66] LOG:  checkpoint complete: wrote 49 buffers (0.3%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.006 s, sync=0.004 s, total=0.016 s; sync files=14, longest=0.003 s, average=0.001 s; distance=269 kB, estimate=269 kB; lsn=0/1951908, redo lsn=0/1951908
 2024-12-01 15:47:19.171 UTC [1] LOG:  database system is shut down
+2024-12-01 16:00:25.788 UTC [48] LOG:  starting PostgreSQL 17.1 (Debian 17.1-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+2024-12-01 16:00:25.792 UTC [48] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2024-12-01 16:00:25.800 UTC [52] LOG:  database system was shut down at 2024-12-01 16:00:25 UTC
+2024-12-01 16:00:25.822 UTC [48] LOG:  database system is ready to accept connections
+2024-12-01 16:00:25.993 UTC [58] LOG:  statement: SELECT 1 FROM pg_database WHERE datname = 'main' ;
+2024-12-01 16:00:26.064 UTC [60] LOG:  statement: CREATE DATABASE "main" ;
+2024-12-01 16:00:26.216 UTC [62] LOG:  statement: CREATE USER connection_user WITH PASSWORD '123';
+2024-12-01 16:00:26.228 UTC [62] LOG:  statement: CREATE TABLE users (
+	    username VARCHAR(20) PRIMARY KEY,
+	    password VARCHAR(20) NOT NULL
+	);
+2024-12-01 16:00:26.231 UTC [62] LOG:  statement: INSERT INTO users (username, password) VALUES
+	('user1', 'user1_password'),
+	('user2', 'user2_password');
+2024-12-01 16:00:26.232 UTC [62] LOG:  statement: CREATE TABLE information (
+	    column1 VARCHAR(100),
+	    column2 VARCHAR(100),
+	    column3 VARCHAR(100)
+	);
+2024-12-01 16:00:26.234 UTC [62] LOG:  statement: INSERT INTO information (column1, column2, column3) VALUES
+	('data1', 'data2', 'data3'),
+	('info1', 'info2', 'info3');
+2024-12-01 16:00:26.235 UTC [62] LOG:  statement: GRANT ALL PRIVILEGES ON DATABASE main TO connection_user;
+2024-12-01 16:00:26.236 UTC [62] LOG:  statement: GRANT ALL PRIVILEGES ON TABLE users TO connection_user;
+2024-12-01 16:00:26.237 UTC [62] LOG:  statement: GRANT ALL PRIVILEGES ON TABLE information TO connection_user;
+2024-12-01 16:00:26.248 UTC [48] LOG:  received fast shutdown request
+2024-12-01 16:00:26.253 UTC [48] LOG:  aborting any active transactions
+2024-12-01 16:00:26.256 UTC [48] LOG:  background worker "logical replication launcher" (PID 55) exited with exit code 1
+2024-12-01 16:00:26.262 UTC [50] LOG:  shutting down
+2024-12-01 16:00:26.275 UTC [50] LOG:  checkpoint starting: shutdown immediate
+2024-12-01 16:00:26.375 UTC [50] LOG:  checkpoint complete: wrote 936 buffers (5.7%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.086 s, sync=0.007 s, total=0.114 s; sync files=311, longest=0.005 s, average=0.001 s; distance=4260 kB, estimate=4260 kB; lsn=0/190E260, redo lsn=0/190E260
+2024-12-01 16:00:26.384 UTC [48] LOG:  database system is shut down
+2024-12-01 16:00:26.524 UTC [1] LOG:  starting PostgreSQL 17.1 (Debian 17.1-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+2024-12-01 16:00:26.524 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+2024-12-01 16:00:26.524 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+2024-12-01 16:00:26.526 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2024-12-01 16:00:26.556 UTC [68] LOG:  database system was shut down at 2024-12-01 16:00:26 UTC
+2024-12-01 16:00:26.577 UTC [1] LOG:  database system is ready to accept connections
+2024-12-01 16:00:49.186 UTC [1] LOG:  received fast shutdown request
+2024-12-01 16:00:49.187 UTC [1] LOG:  aborting any active transactions
+2024-12-01 16:00:49.192 UTC [1] LOG:  background worker "logical replication launcher" (PID 71) exited with exit code 1
+2024-12-01 16:00:49.193 UTC [66] LOG:  shutting down
+2024-12-01 16:00:49.194 UTC [66] LOG:  checkpoint starting: shutdown immediate
+2024-12-01 16:00:49.204 UTC [66] LOG:  checkpoint complete: wrote 4 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.003 s, sync=0.003 s, total=0.011 s; sync files=3, longest=0.002 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/190E310, redo lsn=0/190E310
+2024-12-01 16:00:49.211 UTC [1] LOG:  database system is shut down
+2024-12-01 16:01:14.293 UTC [47] LOG:  starting PostgreSQL 17.1 (Debian 17.1-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+2024-12-01 16:01:14.296 UTC [47] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2024-12-01 16:01:14.321 UTC [51] LOG:  database system was shut down at 2024-12-01 16:01:13 UTC
+2024-12-01 16:01:14.333 UTC [47] LOG:  database system is ready to accept connections
+2024-12-01 16:01:14.540 UTC [57] LOG:  statement: SELECT 1 FROM pg_database WHERE datname = 'main' ;
+2024-12-01 16:01:14.646 UTC [59] LOG:  statement: CREATE DATABASE "main" ;
+2024-12-01 16:01:14.862 UTC [61] LOG:  statement: CREATE USER connection_user WITH PASSWORD '123';
+2024-12-01 16:01:14.879 UTC [61] LOG:  statement: CREATE TABLE users (
+	    username VARCHAR(20) PRIMARY KEY,
+	    password VARCHAR(20) NOT NULL
+	);
+2024-12-01 16:01:14.889 UTC [61] LOG:  statement: INSERT INTO users (username, password) VALUES
+	('user1', 'user1_password'),
+	('user2', 'user2_password');
+2024-12-01 16:01:14.891 UTC [61] LOG:  statement: CREATE TABLE information (
+	    column1 VARCHAR(100),
+	    column2 VARCHAR(100),
+	    column3 VARCHAR(100)
+	);
+2024-12-01 16:01:14.907 UTC [61] LOG:  statement: INSERT INTO information (column1, column2, column3) VALUES
+	('data1', 'data2', 'data3'),
+	('info1', 'info2', 'info3');
+2024-12-01 16:01:14.908 UTC [61] LOG:  statement: GRANT ALL PRIVILEGES ON DATABASE main TO connection_user;
+2024-12-01 16:01:14.909 UTC [61] LOG:  statement: GRANT ALL PRIVILEGES ON TABLE users TO connection_user;
+2024-12-01 16:01:14.912 UTC [61] LOG:  statement: GRANT ALL PRIVILEGES ON TABLE information TO connection_user;
+2024-12-01 16:01:14.927 UTC [47] LOG:  received fast shutdown request
+2024-12-01 16:01:14.946 UTC [47] LOG:  aborting any active transactions
+2024-12-01 16:01:14.957 UTC [47] LOG:  background worker "logical replication launcher" (PID 54) exited with exit code 1
+2024-12-01 16:01:14.967 UTC [49] LOG:  shutting down
+2024-12-01 16:01:14.968 UTC [49] LOG:  checkpoint starting: shutdown immediate
+2024-12-01 16:01:15.122 UTC [49] LOG:  checkpoint complete: wrote 936 buffers (5.7%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.133 s, sync=0.003 s, total=0.155 s; sync files=311, longest=0.002 s, average=0.001 s; distance=4260 kB, estimate=4260 kB; lsn=0/190E260, redo lsn=0/190E260
+2024-12-01 16:01:15.134 UTC [47] LOG:  database system is shut down
+2024-12-01 16:01:15.322 UTC [1] LOG:  starting PostgreSQL 17.1 (Debian 17.1-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+2024-12-01 16:01:15.323 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+2024-12-01 16:01:15.323 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+2024-12-01 16:01:15.330 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2024-12-01 16:01:15.339 UTC [67] LOG:  database system was shut down at 2024-12-01 16:01:15 UTC
+2024-12-01 16:01:15.352 UTC [1] LOG:  database system is ready to accept connections
+2024-12-01 16:04:12.299 UTC [1] LOG:  received fast shutdown request
+2024-12-01 16:04:12.301 UTC [1] LOG:  aborting any active transactions
+2024-12-01 16:04:12.305 UTC [1] LOG:  background worker "logical replication launcher" (PID 70) exited with exit code 1
+2024-12-01 16:04:12.308 UTC [65] LOG:  shutting down
+2024-12-01 16:04:12.309 UTC [65] LOG:  checkpoint starting: shutdown immediate
+2024-12-01 16:04:12.330 UTC [65] LOG:  checkpoint complete: wrote 49 buffers (0.3%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.007 s, sync=0.003 s, total=0.023 s; sync files=14, longest=0.002 s, average=0.001 s; distance=269 kB, estimate=269 kB; lsn=0/1951908, redo lsn=0/1951908
+2024-12-01 16:04:12.338 UTC [1] LOG:  database system is shut down
+2024-12-01 16:04:55.257 UTC [48] LOG:  starting PostgreSQL 17.1 (Debian 17.1-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+2024-12-01 16:04:55.262 UTC [48] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2024-12-01 16:04:55.269 UTC [52] LOG:  database system was shut down at 2024-12-01 16:04:54 UTC
+2024-12-01 16:04:55.279 UTC [48] LOG:  database system is ready to accept connections
+2024-12-01 16:04:55.409 UTC [58] LOG:  statement: SELECT 1 FROM pg_database WHERE datname = 'main' ;
+2024-12-01 16:04:55.475 UTC [60] LOG:  statement: CREATE DATABASE "main" ;
+2024-12-01 16:04:55.699 UTC [62] LOG:  statement: CREATE USER connection_user WITH PASSWORD '123';
+2024-12-01 16:04:55.724 UTC [62] LOG:  statement: CREATE TABLE users (
+	    username VARCHAR(20) PRIMARY KEY,
+	    password VARCHAR(20) NOT NULL
+	);
+2024-12-01 16:04:55.728 UTC [62] LOG:  statement: INSERT INTO users (username, password) VALUES
+	('user1', 'user1_password'),
+	('user2', 'user2_password');
+2024-12-01 16:04:55.730 UTC [62] LOG:  statement: CREATE TABLE information (
+	    column1 VARCHAR(100),
+	    column2 VARCHAR(100),
+	    column3 VARCHAR(100)
+	);
+2024-12-01 16:04:55.732 UTC [62] LOG:  statement: INSERT INTO information (column1, column2, column3) VALUES
+	('data1', 'data2', 'data3'),
+	('info1', 'info2', 'info3');
+2024-12-01 16:04:55.733 UTC [62] LOG:  statement: GRANT ALL PRIVILEGES ON DATABASE main TO connection_user;
+2024-12-01 16:04:55.734 UTC [62] LOG:  statement: GRANT ALL PRIVILEGES ON TABLE users TO connection_user;
+2024-12-01 16:04:55.735 UTC [62] LOG:  statement: GRANT ALL PRIVILEGES ON TABLE information TO connection_user;
+2024-12-01 16:04:55.742 UTC [48] LOG:  received fast shutdown request
+2024-12-01 16:04:55.759 UTC [48] LOG:  aborting any active transactions
+2024-12-01 16:04:55.779 UTC [48] LOG:  background worker "logical replication launcher" (PID 55) exited with exit code 1
+2024-12-01 16:04:55.779 UTC [50] LOG:  shutting down
+2024-12-01 16:04:55.784 UTC [50] LOG:  checkpoint starting: shutdown immediate
+2024-12-01 16:04:55.926 UTC [50] LOG:  checkpoint complete: wrote 936 buffers (5.7%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.136 s, sync=0.004 s, total=0.147 s; sync files=311, longest=0.002 s, average=0.001 s; distance=4260 kB, estimate=4260 kB; lsn=0/190E260, redo lsn=0/190E260
+2024-12-01 16:04:55.939 UTC [48] LOG:  database system is shut down
+2024-12-01 16:04:56.004 UTC [1] LOG:  starting PostgreSQL 17.1 (Debian 17.1-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+2024-12-01 16:04:56.014 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+2024-12-01 16:04:56.014 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+2024-12-01 16:04:56.025 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2024-12-01 16:04:56.040 UTC [68] LOG:  database system was shut down at 2024-12-01 16:04:55 UTC
+2024-12-01 16:04:56.054 UTC [1] LOG:  database system is ready to accept connections
+2024-12-01 16:09:30.024 UTC [1] LOG:  received fast shutdown request
+2024-12-01 16:09:30.026 UTC [1] LOG:  aborting any active transactions
+2024-12-01 16:09:30.029 UTC [1] LOG:  background worker "logical replication launcher" (PID 71) exited with exit code 1
+2024-12-01 16:09:30.045 UTC [66] LOG:  shutting down
+2024-12-01 16:09:30.046 UTC [66] LOG:  checkpoint starting: shutdown immediate
+2024-12-01 16:09:30.058 UTC [66] LOG:  checkpoint complete: wrote 49 buffers (0.3%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.006 s, sync=0.003 s, total=0.014 s; sync files=14, longest=0.002 s, average=0.001 s; distance=269 kB, estimate=269 kB; lsn=0/19518D0, redo lsn=0/19518D0
+2024-12-01 16:09:30.066 UTC [1] LOG:  database system is shut down
+2024-12-01 16:09:38.520 UTC [49] LOG:  starting PostgreSQL 17.1 (Debian 17.1-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+2024-12-01 16:09:38.523 UTC [49] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2024-12-01 16:09:38.533 UTC [53] LOG:  database system was shut down at 2024-12-01 16:09:38 UTC
+2024-12-01 16:09:38.543 UTC [49] LOG:  database system is ready to accept connections
+2024-12-01 16:09:38.731 UTC [59] LOG:  statement: SELECT 1 FROM pg_database WHERE datname = 'main' ;
+2024-12-01 16:09:38.803 UTC [61] LOG:  statement: CREATE DATABASE "main" ;
+2024-12-01 16:09:39.079 UTC [63] LOG:  statement: CREATE USER connection_user WITH PASSWORD '123';
+2024-12-01 16:09:39.111 UTC [63] LOG:  statement: CREATE TABLE users (
+	    username VARCHAR(20) PRIMARY KEY,
+	    password VARCHAR(20) NOT NULL
+	);
+2024-12-01 16:09:39.116 UTC [63] LOG:  statement: INSERT INTO users (username, password) VALUES
+	('user1', 'user1_password'),
+	('user2', 'user2_password');
+2024-12-01 16:09:39.117 UTC [63] LOG:  statement: CREATE TABLE information (
+	    column1 VARCHAR(100),
+	    column2 VARCHAR(100),
+	    column3 VARCHAR(100)
+	);
+2024-12-01 16:09:39.120 UTC [63] LOG:  statement: INSERT INTO information (column1, column2, column3) VALUES
+	('data1', 'data2', 'data3'),
+	('info1', 'info2', 'info3');
+2024-12-01 16:09:39.121 UTC [63] LOG:  statement: GRANT ALL PRIVILEGES ON DATABASE main TO connection_user;
+2024-12-01 16:09:39.129 UTC [63] LOG:  statement: GRANT ALL PRIVILEGES ON TABLE users TO connection_user;
+2024-12-01 16:09:39.130 UTC [63] LOG:  statement: GRANT ALL PRIVILEGES ON TABLE information TO connection_user;
+2024-12-01 16:09:39.146 UTC [49] LOG:  received fast shutdown request
+2024-12-01 16:09:39.156 UTC [49] LOG:  aborting any active transactions
+2024-12-01 16:09:39.164 UTC [49] LOG:  background worker "logical replication launcher" (PID 56) exited with exit code 1
+2024-12-01 16:09:39.167 UTC [51] LOG:  shutting down
+2024-12-01 16:09:39.171 UTC [51] LOG:  checkpoint starting: shutdown immediate
+2024-12-01 16:09:39.281 UTC [51] LOG:  checkpoint complete: wrote 936 buffers (5.7%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.098 s, sync=0.008 s, total=0.115 s; sync files=311, longest=0.004 s, average=0.001 s; distance=4260 kB, estimate=4260 kB; lsn=0/190E260, redo lsn=0/190E260
+2024-12-01 16:09:39.296 UTC [49] LOG:  database system is shut down
+2024-12-01 16:09:39.423 UTC [1] LOG:  starting PostgreSQL 17.1 (Debian 17.1-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+2024-12-01 16:09:39.426 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+2024-12-01 16:09:39.426 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+2024-12-01 16:09:39.431 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2024-12-01 16:09:39.441 UTC [69] LOG:  database system was shut down at 2024-12-01 16:09:39 UTC
+2024-12-01 16:09:39.455 UTC [1] LOG:  database system is ready to accept connections
+2024-12-01 16:11:00.621 UTC [1] LOG:  received fast shutdown request
+2024-12-01 16:11:00.623 UTC [1] LOG:  aborting any active transactions
+2024-12-01 16:11:00.628 UTC [1] LOG:  background worker "logical replication launcher" (PID 72) exited with exit code 1
+2024-12-01 16:11:00.631 UTC [67] LOG:  shutting down
+2024-12-01 16:11:00.633 UTC [67] LOG:  checkpoint starting: shutdown immediate
+2024-12-01 16:11:00.646 UTC [67] LOG:  checkpoint complete: wrote 47 buffers (0.3%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.007 s, sync=0.003 s, total=0.015 s; sync files=14, longest=0.002 s, average=0.001 s; distance=247 kB, estimate=247 kB; lsn=0/194C0D8, redo lsn=0/194C0D8
+2024-12-01 16:11:00.653 UTC [1] LOG:  database system is shut down
+2024-12-01 16:15:10.427 UTC [48] LOG:  starting PostgreSQL 17.1 (Debian 17.1-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+2024-12-01 16:15:10.429 UTC [48] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2024-12-01 16:15:10.438 UTC [52] LOG:  database system was shut down at 2024-12-01 16:15:10 UTC
+2024-12-01 16:15:10.454 UTC [48] LOG:  database system is ready to accept connections
+2024-12-01 16:15:10.674 UTC [58] LOG:  statement: SELECT 1 FROM pg_database WHERE datname = 'main' ;
+2024-12-01 16:15:10.786 UTC [60] LOG:  statement: CREATE DATABASE "main" ;
+2024-12-01 16:15:11.076 UTC [62] LOG:  statement: CREATE USER connection_user WITH PASSWORD '123';
+2024-12-01 16:15:11.089 UTC [62] LOG:  statement: CREATE TABLE users (
+	    username VARCHAR(20) PRIMARY KEY,
+	    password VARCHAR(20) NOT NULL
+	);
+2024-12-01 16:15:11.093 UTC [62] LOG:  statement: INSERT INTO users (username, password) VALUES
+	('user1', 'user1_password'),
+	('user2', 'user2_password');
+2024-12-01 16:15:11.095 UTC [62] LOG:  statement: CREATE TABLE information (
+	    column1 VARCHAR(100),
+	    column2 VARCHAR(100),
+	    column3 VARCHAR(100)
+	);
+2024-12-01 16:15:11.097 UTC [62] LOG:  statement: INSERT INTO information (column1, column2, column3) VALUES
+	('data1', 'data2', 'data3'),
+	('info1', 'info2', 'info3');
+2024-12-01 16:15:11.099 UTC [62] LOG:  statement: GRANT ALL PRIVILEGES ON DATABASE main TO connection_user;
+2024-12-01 16:15:11.100 UTC [62] LOG:  statement: GRANT ALL PRIVILEGES ON TABLE users TO connection_user;
+2024-12-01 16:15:11.103 UTC [62] LOG:  statement: GRANT ALL PRIVILEGES ON TABLE information TO connection_user;
+2024-12-01 16:15:11.107 UTC [48] LOG:  received fast shutdown request
+2024-12-01 16:15:11.109 UTC [48] LOG:  aborting any active transactions
+2024-12-01 16:15:11.112 UTC [48] LOG:  background worker "logical replication launcher" (PID 55) exited with exit code 1
+2024-12-01 16:15:11.118 UTC [50] LOG:  shutting down
+2024-12-01 16:15:11.120 UTC [50] LOG:  checkpoint starting: shutdown immediate
+2024-12-01 16:15:11.235 UTC [50] LOG:  checkpoint complete: wrote 936 buffers (5.7%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.104 s, sync=0.004 s, total=0.117 s; sync files=311, longest=0.002 s, average=0.001 s; distance=4260 kB, estimate=4260 kB; lsn=0/190E260, redo lsn=0/190E260
+2024-12-01 16:15:11.248 UTC [48] LOG:  database system is shut down
+2024-12-01 16:15:11.396 UTC [1] LOG:  starting PostgreSQL 17.1 (Debian 17.1-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+2024-12-01 16:15:11.410 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+2024-12-01 16:15:11.410 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+2024-12-01 16:15:11.424 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2024-12-01 16:15:11.451 UTC [68] LOG:  database system was shut down at 2024-12-01 16:15:11 UTC
+2024-12-01 16:15:11.463 UTC [1] LOG:  database system is ready to accept connections
+2024-12-01 16:19:23.252 UTC [1] LOG:  received fast shutdown request
+2024-12-01 16:19:23.254 UTC [1] LOG:  aborting any active transactions
+2024-12-01 16:19:23.259 UTC [1] LOG:  background worker "logical replication launcher" (PID 71) exited with exit code 1
+2024-12-01 16:19:23.262 UTC [66] LOG:  shutting down
+2024-12-01 16:19:23.263 UTC [66] LOG:  checkpoint starting: shutdown immediate
+2024-12-01 16:19:23.280 UTC [66] LOG:  checkpoint complete: wrote 49 buffers (0.3%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.005 s, sync=0.007 s, total=0.019 s; sync files=14, longest=0.006 s, average=0.001 s; distance=269 kB, estimate=269 kB; lsn=0/19518D0, redo lsn=0/19518D0
+2024-12-01 16:19:23.292 UTC [1] LOG:  database system is shut down
+2024-12-01 16:19:46.320 UTC [48] LOG:  starting PostgreSQL 17.1 (Debian 17.1-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+2024-12-01 16:19:46.322 UTC [48] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2024-12-01 16:19:46.329 UTC [52] LOG:  database system was shut down at 2024-12-01 16:19:45 UTC
+2024-12-01 16:19:46.356 UTC [48] LOG:  database system is ready to accept connections
+2024-12-01 16:19:46.560 UTC [58] LOG:  statement: SELECT 1 FROM pg_database WHERE datname = 'main' ;
+2024-12-01 16:19:46.656 UTC [60] LOG:  statement: CREATE DATABASE "main" ;
+2024-12-01 16:19:46.898 UTC [62] LOG:  statement: CREATE USER connection_user WITH PASSWORD '123';
+2024-12-01 16:19:46.912 UTC [62] LOG:  statement: CREATE TABLE users (
+	    username VARCHAR(20) PRIMARY KEY,
+	    password VARCHAR(20) NOT NULL
+	);
+2024-12-01 16:19:46.915 UTC [62] LOG:  statement: INSERT INTO users (username, password) VALUES
+	('user1', 'user1_password'),
+	('user2', 'user2_password');
+2024-12-01 16:19:46.916 UTC [62] LOG:  statement: CREATE TABLE information (
+	    column1 VARCHAR(100),
+	    column2 VARCHAR(100),
+	    column3 VARCHAR(100)
+	);
+2024-12-01 16:19:46.918 UTC [62] LOG:  statement: INSERT INTO information (column1, column2, column3) VALUES
+	('data1', 'data2', 'data3'),
+	('info1', 'info2', 'info3');
+2024-12-01 16:19:46.919 UTC [62] LOG:  statement: GRANT ALL PRIVILEGES ON DATABASE main TO connection_user;
+2024-12-01 16:19:46.920 UTC [62] LOG:  statement: GRANT ALL PRIVILEGES ON TABLE users TO connection_user;
+2024-12-01 16:19:46.924 UTC [62] LOG:  statement: GRANT ALL PRIVILEGES ON TABLE information TO connection_user;
+2024-12-01 16:19:46.933 UTC [48] LOG:  received fast shutdown request
+2024-12-01 16:19:46.941 UTC [48] LOG:  aborting any active transactions
+2024-12-01 16:19:46.963 UTC [48] LOG:  background worker "logical replication launcher" (PID 55) exited with exit code 1
+2024-12-01 16:19:46.963 UTC [50] LOG:  shutting down
+2024-12-01 16:19:46.970 UTC [50] LOG:  checkpoint starting: shutdown immediate
+2024-12-01 16:19:47.085 UTC [50] LOG:  checkpoint complete: wrote 936 buffers (5.7%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.105 s, sync=0.006 s, total=0.122 s; sync files=311, longest=0.003 s, average=0.001 s; distance=4260 kB, estimate=4260 kB; lsn=0/190E260, redo lsn=0/190E260
+2024-12-01 16:19:47.096 UTC [48] LOG:  database system is shut down
+2024-12-01 16:19:47.186 UTC [1] LOG:  starting PostgreSQL 17.1 (Debian 17.1-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+2024-12-01 16:19:47.798 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+2024-12-01 16:19:47.798 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+2024-12-01 16:19:47.801 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2024-12-01 16:19:47.816 UTC [68] LOG:  database system was shut down at 2024-12-01 16:19:47 UTC
+2024-12-01 16:19:47.857 UTC [1] LOG:  database system is ready to accept connections
+2024-12-01 16:23:46.847 UTC [1] LOG:  received fast shutdown request
+2024-12-01 16:23:46.849 UTC [1] LOG:  aborting any active transactions
+2024-12-01 16:23:46.853 UTC [1] LOG:  background worker "logical replication launcher" (PID 71) exited with exit code 1
+2024-12-01 16:23:46.857 UTC [66] LOG:  shutting down
+2024-12-01 16:23:46.858 UTC [66] LOG:  checkpoint starting: shutdown immediate
+2024-12-01 16:23:46.876 UTC [66] LOG:  checkpoint complete: wrote 49 buffers (0.3%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.007 s, sync=0.006 s, total=0.018 s; sync files=14, longest=0.005 s, average=0.001 s; distance=269 kB, estimate=269 kB; lsn=0/1951908, redo lsn=0/1951908
+2024-12-01 16:23:46.884 UTC [1] LOG:  database system is shut down
+2024-12-01 16:23:55.562 UTC [49] LOG:  starting PostgreSQL 17.1 (Debian 17.1-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+2024-12-01 16:23:55.566 UTC [49] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2024-12-01 16:23:55.574 UTC [53] LOG:  database system was shut down at 2024-12-01 16:23:55 UTC
+2024-12-01 16:23:55.587 UTC [49] LOG:  database system is ready to accept connections
+2024-12-01 16:23:55.857 UTC [59] LOG:  statement: SELECT 1 FROM pg_database WHERE datname = 'main' ;
+2024-12-01 16:23:55.939 UTC [61] LOG:  statement: CREATE DATABASE "main" ;
+2024-12-01 16:23:56.228 UTC [63] LOG:  statement: CREATE USER connection_user WITH PASSWORD '123';
+2024-12-01 16:23:56.242 UTC [63] LOG:  statement: CREATE TABLE users (
+	    username VARCHAR(20) PRIMARY KEY,
+	    password VARCHAR(20) NOT NULL
+	);
+2024-12-01 16:23:56.246 UTC [63] LOG:  statement: INSERT INTO users (username, password) VALUES
+	('user1', 'user1_password'),
+	('user2', 'user2_password');
+2024-12-01 16:23:56.248 UTC [63] LOG:  statement: CREATE TABLE information (
+	    column1 VARCHAR(100),
+	    column2 VARCHAR(100),
+	    column3 VARCHAR(100)
+	);
+2024-12-01 16:23:56.250 UTC [63] LOG:  statement: INSERT INTO information (column1, column2, column3) VALUES
+	('data1', 'data2', 'data3'),
+	('info1', 'info2', 'info3');
+2024-12-01 16:23:56.251 UTC [63] LOG:  statement: GRANT ALL PRIVILEGES ON DATABASE main TO connection_user;
+2024-12-01 16:23:56.253 UTC [63] LOG:  statement: GRANT ALL PRIVILEGES ON TABLE users TO connection_user;
+2024-12-01 16:23:56.254 UTC [63] LOG:  statement: GRANT ALL PRIVILEGES ON TABLE information TO connection_user;
+2024-12-01 16:23:56.260 UTC [49] LOG:  received fast shutdown request
+2024-12-01 16:23:56.262 UTC [49] LOG:  aborting any active transactions
+2024-12-01 16:23:56.268 UTC [49] LOG:  background worker "logical replication launcher" (PID 56) exited with exit code 1
+2024-12-01 16:23:56.288 UTC [51] LOG:  shutting down
+2024-12-01 16:23:56.291 UTC [51] LOG:  checkpoint starting: shutdown immediate
+2024-12-01 16:23:56.403 UTC [51] LOG:  checkpoint complete: wrote 936 buffers (5.7%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.103 s, sync=0.005 s, total=0.116 s; sync files=311, longest=0.002 s, average=0.001 s; distance=4260 kB, estimate=4260 kB; lsn=0/190E260, redo lsn=0/190E260
+2024-12-01 16:23:56.416 UTC [49] LOG:  database system is shut down
+2024-12-01 16:23:56.515 UTC [1] LOG:  starting PostgreSQL 17.1 (Debian 17.1-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+2024-12-01 16:23:56.591 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+2024-12-01 16:23:56.591 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+2024-12-01 16:23:56.596 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2024-12-01 16:23:56.607 UTC [69] LOG:  database system was shut down at 2024-12-01 16:23:56 UTC
+2024-12-01 16:23:56.630 UTC [1] LOG:  database system is ready to accept connections
+2024-12-01 16:28:56.614 UTC [67] LOG:  checkpoint starting: time
+2024-12-01 16:29:01.056 UTC [67] LOG:  checkpoint complete: wrote 47 buffers (0.3%); 0 WAL file(s) added, 0 removed, 0 recycled; write=4.434 s, sync=0.002 s, total=4.442 s; sync files=14, longest=0.001 s, average=0.001 s; distance=259 kB, estimate=259 kB; lsn=0/194EF68, redo lsn=0/194EF10
+2024-12-01 16:31:20.885 UTC [1] LOG:  received fast shutdown request
+2024-12-01 16:31:20.887 UTC [1] LOG:  aborting any active transactions
+2024-12-01 16:31:20.890 UTC [1] LOG:  background worker "logical replication launcher" (PID 72) exited with exit code 1
+2024-12-01 16:31:20.892 UTC [67] LOG:  shutting down
+2024-12-01 16:31:20.893 UTC [67] LOG:  checkpoint starting: shutdown immediate
+2024-12-01 16:31:20.898 UTC [67] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.007 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=233 kB; lsn=0/194F018, redo lsn=0/194F018
+2024-12-01 16:31:20.905 UTC [1] LOG:  database system is shut down
+2024-12-01 16:32:01.838 UTC [49] LOG:  starting PostgreSQL 17.1 (Debian 17.1-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+2024-12-01 16:32:01.839 UTC [49] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2024-12-01 16:32:01.859 UTC [53] LOG:  database system was shut down at 2024-12-01 16:32:01 UTC
+2024-12-01 16:32:01.872 UTC [49] LOG:  database system is ready to accept connections
+2024-12-01 16:32:02.037 UTC [59] LOG:  statement: SELECT 1 FROM pg_database WHERE datname = 'main' ;
+2024-12-01 16:32:02.128 UTC [61] LOG:  statement: CREATE DATABASE "main" ;
+2024-12-01 16:32:02.321 UTC [63] LOG:  statement: CREATE USER connection_user WITH PASSWORD '123';
+2024-12-01 16:32:02.334 UTC [63] LOG:  statement: CREATE TABLE users (
+	    username VARCHAR(20) PRIMARY KEY,
+	    password VARCHAR(20) NOT NULL
+	);
+2024-12-01 16:32:02.338 UTC [63] LOG:  statement: INSERT INTO users (username, password) VALUES
+	('user1', 'user1_password'),
+	('user2', 'user2_password');
+2024-12-01 16:32:02.339 UTC [63] LOG:  statement: CREATE TABLE information (
+	    column1 VARCHAR(100),
+	    column2 VARCHAR(100),
+	    column3 VARCHAR(100)
+	);
+2024-12-01 16:32:02.340 UTC [63] LOG:  statement: INSERT INTO information (column1, column2, column3) VALUES
+	('data1', 'data2', 'data3'),
+	('info1', 'info2', 'info3');
+2024-12-01 16:32:02.341 UTC [63] LOG:  statement: GRANT ALL PRIVILEGES ON DATABASE main TO connection_user;
+2024-12-01 16:32:02.343 UTC [63] LOG:  statement: GRANT ALL PRIVILEGES ON TABLE users TO connection_user;
+2024-12-01 16:32:02.343 UTC [63] LOG:  statement: GRANT ALL PRIVILEGES ON TABLE information TO connection_user;
+2024-12-01 16:32:02.347 UTC [49] LOG:  received fast shutdown request
+2024-12-01 16:32:02.349 UTC [49] LOG:  aborting any active transactions
+2024-12-01 16:32:02.378 UTC [49] LOG:  background worker "logical replication launcher" (PID 56) exited with exit code 1
+2024-12-01 16:32:02.378 UTC [51] LOG:  shutting down
+2024-12-01 16:32:02.385 UTC [51] LOG:  checkpoint starting: shutdown immediate
+2024-12-01 16:32:02.514 UTC [51] LOG:  checkpoint complete: wrote 936 buffers (5.7%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.119 s, sync=0.007 s, total=0.137 s; sync files=311, longest=0.003 s, average=0.001 s; distance=4260 kB, estimate=4260 kB; lsn=0/190E260, redo lsn=0/190E260
+2024-12-01 16:32:02.534 UTC [49] LOG:  database system is shut down
+2024-12-01 16:32:02.626 UTC [1] LOG:  starting PostgreSQL 17.1 (Debian 17.1-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+2024-12-01 16:32:02.630 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+2024-12-01 16:32:02.631 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+2024-12-01 16:32:02.635 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2024-12-01 16:32:02.673 UTC [69] LOG:  database system was shut down at 2024-12-01 16:32:02 UTC
+2024-12-01 16:32:02.699 UTC [1] LOG:  database system is ready to accept connections
+2024-12-01 16:35:01.486 UTC [1] LOG:  received fast shutdown request
+2024-12-01 16:35:01.489 UTC [1] LOG:  aborting any active transactions
+2024-12-01 16:35:01.495 UTC [1] LOG:  background worker "logical replication launcher" (PID 72) exited with exit code 1
+2024-12-01 16:35:01.495 UTC [67] LOG:  shutting down
+2024-12-01 16:35:01.496 UTC [67] LOG:  checkpoint starting: shutdown immediate
+2024-12-01 16:35:01.506 UTC [67] LOG:  checkpoint complete: wrote 49 buffers (0.3%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.005 s, sync=0.002 s, total=0.011 s; sync files=14, longest=0.001 s, average=0.001 s; distance=269 kB, estimate=269 kB; lsn=0/1951908, redo lsn=0/1951908
+2024-12-01 16:35:01.513 UTC [1] LOG:  database system is shut down
+2024-12-01 16:39:45.849 UTC [49] LOG:  starting PostgreSQL 17.1 (Debian 17.1-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+2024-12-01 16:39:45.850 UTC [49] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2024-12-01 16:39:45.858 UTC [53] LOG:  database system was shut down at 2024-12-01 16:39:45 UTC
+2024-12-01 16:39:45.869 UTC [49] LOG:  database system is ready to accept connections
+2024-12-01 16:39:46.005 UTC [59] LOG:  statement: SELECT 1 FROM pg_database WHERE datname = 'main' ;
+2024-12-01 16:39:46.101 UTC [61] LOG:  statement: CREATE DATABASE "main" ;
+2024-12-01 16:39:46.368 UTC [63] LOG:  statement: CREATE USER connection_user WITH PASSWORD '123';
+2024-12-01 16:39:46.387 UTC [63] LOG:  statement: CREATE TABLE users (
+	    username VARCHAR(20) PRIMARY KEY,
+	    password VARCHAR(20) NOT NULL
+	);
+2024-12-01 16:39:46.391 UTC [63] LOG:  statement: INSERT INTO users (username, password) VALUES
+	('user1', 'user1_password'),
+	('user2', 'user2_password');
+2024-12-01 16:39:46.393 UTC [63] LOG:  statement: CREATE TABLE information (
+	    column1 VARCHAR(100),
+	    column2 VARCHAR(100),
+	    column3 VARCHAR(100)
+	);
+2024-12-01 16:39:46.394 UTC [63] LOG:  statement: INSERT INTO information (column1, column2, column3) VALUES
+	('data1', 'data2', 'data3'),
+	('info1', 'info2', 'info3');
+2024-12-01 16:39:46.395 UTC [63] LOG:  statement: GRANT ALL PRIVILEGES ON DATABASE main TO connection_user;
+2024-12-01 16:39:46.397 UTC [63] LOG:  statement: GRANT ALL PRIVILEGES ON TABLE users TO connection_user;
+2024-12-01 16:39:46.398 UTC [63] LOG:  statement: GRANT ALL PRIVILEGES ON TABLE information TO connection_user;
+2024-12-01 16:39:46.403 UTC [49] LOG:  received fast shutdown request
+2024-12-01 16:39:46.405 UTC [49] LOG:  aborting any active transactions
+2024-12-01 16:39:46.420 UTC [49] LOG:  background worker "logical replication launcher" (PID 56) exited with exit code 1
+2024-12-01 16:39:46.422 UTC [51] LOG:  shutting down
+2024-12-01 16:39:46.443 UTC [51] LOG:  checkpoint starting: shutdown immediate
+2024-12-01 16:39:46.602 UTC [51] LOG:  checkpoint complete: wrote 936 buffers (5.7%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.147 s, sync=0.004 s, total=0.181 s; sync files=311, longest=0.002 s, average=0.001 s; distance=4260 kB, estimate=4260 kB; lsn=0/190E260, redo lsn=0/190E260
+2024-12-01 16:39:46.617 UTC [49] LOG:  database system is shut down
+2024-12-01 16:39:46.770 UTC [1] LOG:  starting PostgreSQL 17.1 (Debian 17.1-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+2024-12-01 16:39:46.778 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+2024-12-01 16:39:46.778 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+2024-12-01 16:39:46.781 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2024-12-01 16:39:46.788 UTC [69] LOG:  database system was shut down at 2024-12-01 16:39:46 UTC
+2024-12-01 16:39:46.797 UTC [1] LOG:  database system is ready to accept connections
+2024-12-01 16:40:56.618 UTC [1] LOG:  received fast shutdown request
+2024-12-01 16:40:56.620 UTC [1] LOG:  aborting any active transactions
+2024-12-01 16:40:56.627 UTC [1] LOG:  background worker "logical replication launcher" (PID 72) exited with exit code 1
+2024-12-01 16:40:56.627 UTC [67] LOG:  shutting down
+2024-12-01 16:40:56.628 UTC [67] LOG:  checkpoint starting: shutdown immediate
+2024-12-01 16:40:56.641 UTC [67] LOG:  checkpoint complete: wrote 47 buffers (0.3%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.007 s, sync=0.002 s, total=0.014 s; sync files=14, longest=0.001 s, average=0.001 s; distance=247 kB, estimate=247 kB; lsn=0/194C0D8, redo lsn=0/194C0D8
+2024-12-01 16:40:56.648 UTC [1] LOG:  database system is shut down
+2024-12-01 16:42:02.162 UTC [48] LOG:  starting PostgreSQL 17.1 (Debian 17.1-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+2024-12-01 16:42:02.165 UTC [48] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2024-12-01 16:42:02.181 UTC [52] LOG:  database system was shut down at 2024-12-01 16:42:01 UTC
+2024-12-01 16:42:02.192 UTC [48] LOG:  database system is ready to accept connections
+2024-12-01 16:42:02.403 UTC [58] LOG:  statement: SELECT 1 FROM pg_database WHERE datname = 'main' ;
+2024-12-01 16:42:02.489 UTC [60] LOG:  statement: CREATE DATABASE "main" ;
+2024-12-01 16:42:02.760 UTC [62] LOG:  statement: CREATE USER connection_user WITH PASSWORD '123';
+2024-12-01 16:42:02.792 UTC [62] LOG:  statement: CREATE TABLE users (
+	    username VARCHAR(20) PRIMARY KEY,
+	    password VARCHAR(20) NOT NULL
+	);
+2024-12-01 16:42:02.796 UTC [62] LOG:  statement: INSERT INTO users (username, password) VALUES
+	('user1', 'user1_password'),
+	('user2', 'user2_password');
+2024-12-01 16:42:02.797 UTC [62] LOG:  statement: CREATE TABLE information (
+	    column1 VARCHAR(100),
+	    column2 VARCHAR(100),
+	    column3 VARCHAR(100)
+	);
+2024-12-01 16:42:02.799 UTC [62] LOG:  statement: INSERT INTO information (column1, column2, column3) VALUES
+	('data1', 'data2', 'data3'),
+	('info1', 'info2', 'info3');
+2024-12-01 16:42:02.800 UTC [62] LOG:  statement: GRANT ALL PRIVILEGES ON DATABASE main TO connection_user;
+2024-12-01 16:42:02.801 UTC [62] LOG:  statement: GRANT ALL PRIVILEGES ON TABLE users TO connection_user;
+2024-12-01 16:42:02.802 UTC [62] LOG:  statement: GRANT ALL PRIVILEGES ON TABLE information TO connection_user;
+2024-12-01 16:42:02.806 UTC [48] LOG:  received fast shutdown request
+2024-12-01 16:42:02.808 UTC [48] LOG:  aborting any active transactions
+2024-12-01 16:42:02.823 UTC [48] LOG:  background worker "logical replication launcher" (PID 55) exited with exit code 1
+2024-12-01 16:42:02.824 UTC [50] LOG:  shutting down
+2024-12-01 16:42:02.829 UTC [50] LOG:  checkpoint starting: shutdown immediate
+2024-12-01 16:42:02.934 UTC [50] LOG:  checkpoint complete: wrote 936 buffers (5.7%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.093 s, sync=0.007 s, total=0.110 s; sync files=311, longest=0.003 s, average=0.001 s; distance=4260 kB, estimate=4260 kB; lsn=0/190E260, redo lsn=0/190E260
+2024-12-01 16:42:02.947 UTC [48] LOG:  database system is shut down
+2024-12-01 16:42:03.069 UTC [1] LOG:  starting PostgreSQL 17.1 (Debian 17.1-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+2024-12-01 16:42:03.082 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+2024-12-01 16:42:03.085 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+2024-12-01 16:42:03.113 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2024-12-01 16:42:03.122 UTC [68] LOG:  database system was shut down at 2024-12-01 16:42:02 UTC
+2024-12-01 16:42:03.145 UTC [1] LOG:  database system is ready to accept connections
+2024-12-01 16:42:06.372 UTC [72] LOG:  execute pdo_stmt_00000001: SELECT * FROM users WHERE username = 'user1' AND password = 'user1_password'
+2024-12-01 16:42:06.373 UTC [72] LOG:  statement: DEALLOCATE pdo_stmt_00000001
+2024-12-01 16:42:06.375 UTC [72] LOG:  execute pdo_stmt_00000002: SELECT * FROM information
+2024-12-01 16:42:06.376 UTC [72] LOG:  statement: DEALLOCATE pdo_stmt_00000002
+2024-12-01 16:44:05.748 UTC [1] LOG:  received fast shutdown request
+2024-12-01 16:44:05.750 UTC [1] LOG:  aborting any active transactions
+2024-12-01 16:44:05.753 UTC [1] LOG:  background worker "logical replication launcher" (PID 71) exited with exit code 1
+2024-12-01 16:44:05.755 UTC [66] LOG:  shutting down
+2024-12-01 16:44:05.757 UTC [66] LOG:  checkpoint starting: shutdown immediate
+2024-12-01 16:44:05.768 UTC [66] LOG:  checkpoint complete: wrote 51 buffers (0.3%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.006 s, sync=0.002 s, total=0.013 s; sync files=16, longest=0.001 s, average=0.001 s; distance=269 kB, estimate=269 kB; lsn=0/1951908, redo lsn=0/1951908
+2024-12-01 16:44:05.777 UTC [1] LOG:  database system is shut down
+2024-12-01 16:44:26.870 UTC [48] LOG:  starting PostgreSQL 17.1 (Debian 17.1-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+2024-12-01 16:44:26.872 UTC [48] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2024-12-01 16:44:26.881 UTC [52] LOG:  database system was shut down at 2024-12-01 16:44:26 UTC
+2024-12-01 16:44:26.892 UTC [48] LOG:  database system is ready to accept connections
+2024-12-01 16:44:27.064 UTC [58] LOG:  statement: SELECT 1 FROM pg_database WHERE datname = 'main' ;
+2024-12-01 16:44:27.195 UTC [60] LOG:  statement: CREATE DATABASE "main" ;
+2024-12-01 16:44:27.433 UTC [62] LOG:  statement: CREATE USER connection_user WITH PASSWORD '123';
+2024-12-01 16:44:27.457 UTC [62] LOG:  statement: CREATE TABLE users (
+	    username VARCHAR(20) PRIMARY KEY,
+	    password VARCHAR(20) NOT NULL
+	);
+2024-12-01 16:44:27.462 UTC [62] LOG:  statement: INSERT INTO users (username, password) VALUES
+	('user1', 'user1_password'),
+	('user2', 'user2_password');
+2024-12-01 16:44:27.464 UTC [62] LOG:  statement: CREATE TABLE information (
+	    column1 VARCHAR(100),
+	    column2 VARCHAR(100),
+	    column3 VARCHAR(100)
+	);
+2024-12-01 16:44:27.467 UTC [62] LOG:  statement: INSERT INTO information (column1, column2, column3) VALUES
+	('data1', 'data2', 'data3'),
+	('info1', 'info2', 'info3');
+2024-12-01 16:44:27.469 UTC [62] LOG:  statement: GRANT ALL PRIVILEGES ON DATABASE main TO connection_user;
+2024-12-01 16:44:27.471 UTC [62] LOG:  statement: GRANT ALL PRIVILEGES ON TABLE users TO connection_user;
+2024-12-01 16:44:27.472 UTC [62] LOG:  statement: GRANT ALL PRIVILEGES ON TABLE information TO connection_user;
+2024-12-01 16:44:27.490 UTC [48] LOG:  received fast shutdown request
+2024-12-01 16:44:27.492 UTC [48] LOG:  aborting any active transactions
+2024-12-01 16:44:27.504 UTC [48] LOG:  background worker "logical replication launcher" (PID 55) exited with exit code 1
+2024-12-01 16:44:27.509 UTC [50] LOG:  shutting down
+2024-12-01 16:44:27.510 UTC [50] LOG:  checkpoint starting: shutdown immediate
+2024-12-01 16:44:27.637 UTC [50] LOG:  checkpoint complete: wrote 936 buffers (5.7%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.105 s, sync=0.004 s, total=0.129 s; sync files=311, longest=0.002 s, average=0.001 s; distance=4260 kB, estimate=4260 kB; lsn=0/190E260, redo lsn=0/190E260
+2024-12-01 16:44:27.651 UTC [48] LOG:  database system is shut down
+2024-12-01 16:44:27.756 UTC [1] LOG:  starting PostgreSQL 17.1 (Debian 17.1-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+2024-12-01 16:44:27.805 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+2024-12-01 16:44:27.806 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+2024-12-01 16:44:27.813 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2024-12-01 16:44:27.833 UTC [68] LOG:  database system was shut down at 2024-12-01 16:44:27 UTC
+2024-12-01 16:44:27.847 UTC [1] LOG:  database system is ready to accept connections
+2024-12-01 16:46:47.309 UTC [1] LOG:  received fast shutdown request
+2024-12-01 16:46:47.310 UTC [1] LOG:  aborting any active transactions
+2024-12-01 16:46:47.313 UTC [1] LOG:  background worker "logical replication launcher" (PID 71) exited with exit code 1
+2024-12-01 16:46:47.316 UTC [66] LOG:  shutting down
+2024-12-01 16:46:47.317 UTC [66] LOG:  checkpoint starting: shutdown immediate
+2024-12-01 16:46:47.329 UTC [66] LOG:  checkpoint complete: wrote 49 buffers (0.3%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.006 s, sync=0.002 s, total=0.013 s; sync files=14, longest=0.001 s, average=0.001 s; distance=269 kB, estimate=269 kB; lsn=0/1951908, redo lsn=0/1951908
+2024-12-01 16:46:47.335 UTC [1] LOG:  database system is shut down
+2024-12-01 16:47:01.483 UTC [49] LOG:  starting PostgreSQL 17.1 (Debian 17.1-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+2024-12-01 16:47:01.486 UTC [49] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2024-12-01 16:47:01.497 UTC [53] LOG:  database system was shut down at 2024-12-01 16:47:01 UTC
+2024-12-01 16:47:01.515 UTC [49] LOG:  database system is ready to accept connections
+2024-12-01 16:47:01.656 UTC [59] LOG:  statement: SELECT 1 FROM pg_database WHERE datname = 'main' ;
+2024-12-01 16:47:01.729 UTC [61] LOG:  statement: CREATE DATABASE "main" ;
+2024-12-01 16:47:01.966 UTC [63] LOG:  statement: CREATE USER connection_user WITH PASSWORD '123';
+2024-12-01 16:47:01.984 UTC [63] LOG:  statement: CREATE TABLE users (
+	    username VARCHAR(20) PRIMARY KEY,
+	    password VARCHAR(20) NOT NULL
+	);
+2024-12-01 16:47:01.990 UTC [63] LOG:  statement: INSERT INTO users (username, password) VALUES
+	('user1', 'user1_password'),
+	('user2', 'user2_password');
+2024-12-01 16:47:01.991 UTC [63] LOG:  statement: CREATE TABLE information (
+	    column1 VARCHAR(100),
+	    column2 VARCHAR(100),
+	    column3 VARCHAR(100)
+	);
+2024-12-01 16:47:01.993 UTC [63] LOG:  statement: INSERT INTO information (column1, column2, column3) VALUES
+	('data1', 'data2', 'data3'),
+	('info1', 'info2', 'info3');
+2024-12-01 16:47:01.995 UTC [63] LOG:  statement: GRANT ALL PRIVILEGES ON DATABASE main TO connection_user;
+2024-12-01 16:47:01.997 UTC [63] LOG:  statement: GRANT ALL PRIVILEGES ON TABLE users TO connection_user;
+2024-12-01 16:47:01.998 UTC [63] LOG:  statement: GRANT ALL PRIVILEGES ON TABLE information TO connection_user;
+2024-12-01 16:47:02.003 UTC [49] LOG:  received fast shutdown request
+2024-12-01 16:47:02.004 UTC [49] LOG:  aborting any active transactions
+2024-12-01 16:47:02.011 UTC [49] LOG:  background worker "logical replication launcher" (PID 56) exited with exit code 1
+2024-12-01 16:47:02.029 UTC [51] LOG:  shutting down
+2024-12-01 16:47:02.030 UTC [51] LOG:  checkpoint starting: shutdown immediate
+2024-12-01 16:47:02.123 UTC [51] LOG:  checkpoint complete: wrote 936 buffers (5.7%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.083 s, sync=0.007 s, total=0.094 s; sync files=311, longest=0.002 s, average=0.001 s; distance=4260 kB, estimate=4260 kB; lsn=0/190E260, redo lsn=0/190E260
+2024-12-01 16:47:02.142 UTC [49] LOG:  database system is shut down
+2024-12-01 16:47:02.264 UTC [1] LOG:  starting PostgreSQL 17.1 (Debian 17.1-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+2024-12-01 16:47:02.264 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+2024-12-01 16:47:02.264 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+2024-12-01 16:47:02.276 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2024-12-01 16:47:02.284 UTC [69] LOG:  database system was shut down at 2024-12-01 16:47:02 UTC
+2024-12-01 16:47:02.292 UTC [1] LOG:  database system is ready to accept connections
+2024-12-01 16:49:46.733 UTC [1] LOG:  received fast shutdown request
+2024-12-01 16:49:46.734 UTC [1] LOG:  aborting any active transactions
+2024-12-01 16:49:46.742 UTC [1] LOG:  background worker "logical replication launcher" (PID 72) exited with exit code 1
+2024-12-01 16:49:46.745 UTC [67] LOG:  shutting down
+2024-12-01 16:49:46.747 UTC [67] LOG:  checkpoint starting: shutdown immediate
+2024-12-01 16:49:46.756 UTC [67] LOG:  checkpoint complete: wrote 49 buffers (0.3%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.005 s, sync=0.001 s, total=0.012 s; sync files=14, longest=0.001 s, average=0.001 s; distance=269 kB, estimate=269 kB; lsn=0/1951908, redo lsn=0/1951908
+2024-12-01 16:49:46.763 UTC [1] LOG:  database system is shut down
+2024-12-01 16:58:05.153 UTC [48] LOG:  starting PostgreSQL 17.1 (Debian 17.1-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+2024-12-01 16:58:05.155 UTC [48] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2024-12-01 16:58:05.164 UTC [52] LOG:  database system was shut down at 2024-12-01 16:58:04 UTC
+2024-12-01 16:58:05.172 UTC [48] LOG:  database system is ready to accept connections
+2024-12-01 16:58:05.387 UTC [58] LOG:  statement: SELECT 1 FROM pg_database WHERE datname = 'main' ;
+2024-12-01 16:58:05.461 UTC [60] LOG:  statement: CREATE DATABASE "main" ;
+2024-12-01 16:58:05.695 UTC [62] LOG:  statement: CREATE USER connection_user WITH PASSWORD '123';
+2024-12-01 16:58:05.721 UTC [62] LOG:  statement: CREATE TABLE users (
+	    username VARCHAR(20) PRIMARY KEY,
+	    password VARCHAR(20) NOT NULL
+	);
+2024-12-01 16:58:05.730 UTC [62] LOG:  statement: INSERT INTO users (username, password) VALUES
+	('user1', 'user1_password'),
+	('user2', 'user2_password');
+2024-12-01 16:58:05.733 UTC [62] LOG:  statement: CREATE TABLE information (
+	    column1 VARCHAR(100),
+	    column2 VARCHAR(100),
+	    column3 VARCHAR(100)
+	);
+2024-12-01 16:58:05.736 UTC [62] LOG:  statement: INSERT INTO information (column1, column2, column3) VALUES
+	('data1', 'data2', 'data3'),
+	('info1', 'info2', 'info3');
+2024-12-01 16:58:05.738 UTC [62] LOG:  statement: GRANT ALL PRIVILEGES ON DATABASE main TO connection_user;
+2024-12-01 16:58:05.740 UTC [62] LOG:  statement: GRANT ALL PRIVILEGES ON TABLE users TO connection_user;
+2024-12-01 16:58:05.741 UTC [62] LOG:  statement: GRANT ALL PRIVILEGES ON TABLE information TO connection_user;
+2024-12-01 16:58:05.748 UTC [48] LOG:  received fast shutdown request
+2024-12-01 16:58:05.752 UTC [48] LOG:  aborting any active transactions
+2024-12-01 16:58:05.767 UTC [48] LOG:  background worker "logical replication launcher" (PID 55) exited with exit code 1
+2024-12-01 16:58:05.768 UTC [50] LOG:  shutting down
+2024-12-01 16:58:05.775 UTC [50] LOG:  checkpoint starting: shutdown immediate
+2024-12-01 16:58:05.929 UTC [50] LOG:  checkpoint complete: wrote 936 buffers (5.7%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.148 s, sync=0.004 s, total=0.161 s; sync files=311, longest=0.002 s, average=0.001 s; distance=4260 kB, estimate=4260 kB; lsn=0/190E260, redo lsn=0/190E260
+2024-12-01 16:58:05.946 UTC [48] LOG:  database system is shut down
+2024-12-01 16:58:06.020 UTC [1] LOG:  starting PostgreSQL 17.1 (Debian 17.1-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+2024-12-01 16:58:06.021 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+2024-12-01 16:58:06.021 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+2024-12-01 16:58:06.024 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2024-12-01 16:58:06.030 UTC [68] LOG:  database system was shut down at 2024-12-01 16:58:05 UTC
+2024-12-01 16:58:06.049 UTC [1] LOG:  database system is ready to accept connections
+2024-12-01 17:02:27.148 UTC [1] LOG:  received fast shutdown request
+2024-12-01 17:02:27.149 UTC [1] LOG:  aborting any active transactions
+2024-12-01 17:02:27.153 UTC [1] LOG:  background worker "logical replication launcher" (PID 71) exited with exit code 1
+2024-12-01 17:02:27.159 UTC [66] LOG:  shutting down
+2024-12-01 17:02:27.162 UTC [66] LOG:  checkpoint starting: shutdown immediate
+2024-12-01 17:02:27.173 UTC [66] LOG:  checkpoint complete: wrote 49 buffers (0.3%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.005 s, sync=0.002 s, total=0.015 s; sync files=14, longest=0.001 s, average=0.001 s; distance=269 kB, estimate=269 kB; lsn=0/1951908, redo lsn=0/1951908
+2024-12-01 17:02:27.183 UTC [1] LOG:  database system is shut down
+2024-12-01 17:02:48.589 UTC [49] LOG:  starting PostgreSQL 17.1 (Debian 17.1-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+2024-12-01 17:02:48.591 UTC [49] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2024-12-01 17:02:48.604 UTC [53] LOG:  database system was shut down at 2024-12-01 17:02:48 UTC
+2024-12-01 17:02:48.615 UTC [49] LOG:  database system is ready to accept connections
+2024-12-01 17:02:48.838 UTC [59] LOG:  statement: SELECT 1 FROM pg_database WHERE datname = 'main' ;
+2024-12-01 17:02:48.929 UTC [61] LOG:  statement: CREATE DATABASE "main" ;
+2024-12-01 17:02:49.214 UTC [63] LOG:  statement: CREATE USER connection_user WITH PASSWORD '123';
+2024-12-01 17:02:49.239 UTC [63] LOG:  statement: CREATE TABLE users (
+	    username VARCHAR(20) PRIMARY KEY,
+	    password VARCHAR(20) NOT NULL
+	);
+2024-12-01 17:02:49.242 UTC [63] LOG:  statement: INSERT INTO users (username, password) VALUES
+	('user1', 'user1_password'),
+	('user2', 'user2_password');
+2024-12-01 17:02:49.243 UTC [63] LOG:  statement: CREATE TABLE information (
+	    column1 VARCHAR(100),
+	    column2 VARCHAR(100),
+	    column3 VARCHAR(100)
+	);
+2024-12-01 17:02:49.245 UTC [63] LOG:  statement: INSERT INTO information (column1, column2, column3) VALUES
+	('data1', 'data2', 'data3'),
+	('info1', 'info2', 'info3');
+2024-12-01 17:02:49.246 UTC [63] LOG:  statement: GRANT ALL PRIVILEGES ON DATABASE main TO connection_user;
+2024-12-01 17:02:49.248 UTC [63] LOG:  statement: GRANT ALL PRIVILEGES ON TABLE users TO connection_user;
+2024-12-01 17:02:49.249 UTC [63] LOG:  statement: GRANT ALL PRIVILEGES ON TABLE information TO connection_user;
+2024-12-01 17:02:49.253 UTC [49] LOG:  received fast shutdown request
+2024-12-01 17:02:49.255 UTC [49] LOG:  aborting any active transactions
+2024-12-01 17:02:49.260 UTC [49] LOG:  background worker "logical replication launcher" (PID 56) exited with exit code 1
+2024-12-01 17:02:49.266 UTC [51] LOG:  shutting down
+2024-12-01 17:02:49.267 UTC [51] LOG:  checkpoint starting: shutdown immediate
+2024-12-01 17:02:49.364 UTC [51] LOG:  checkpoint complete: wrote 936 buffers (5.7%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.086 s, sync=0.005 s, total=0.098 s; sync files=311, longest=0.002 s, average=0.001 s; distance=4260 kB, estimate=4260 kB; lsn=0/190E260, redo lsn=0/190E260
+2024-12-01 17:02:49.374 UTC [49] LOG:  database system is shut down
+2024-12-01 17:02:49.526 UTC [1] LOG:  starting PostgreSQL 17.1 (Debian 17.1-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+2024-12-01 17:02:49.526 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+2024-12-01 17:02:49.526 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+2024-12-01 17:02:49.537 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2024-12-01 17:02:49.545 UTC [69] LOG:  database system was shut down at 2024-12-01 17:02:49 UTC
+2024-12-01 17:02:49.559 UTC [1] LOG:  database system is ready to accept connections
+2024-12-01 17:05:19.715 UTC [1] LOG:  received fast shutdown request
+2024-12-01 17:05:19.716 UTC [1] LOG:  aborting any active transactions
+2024-12-01 17:05:19.719 UTC [1] LOG:  background worker "logical replication launcher" (PID 72) exited with exit code 1
+2024-12-01 17:05:19.724 UTC [67] LOG:  shutting down
+2024-12-01 17:05:19.725 UTC [67] LOG:  checkpoint starting: shutdown immediate
+2024-12-01 17:05:19.738 UTC [67] LOG:  checkpoint complete: wrote 49 buffers (0.3%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.008 s, sync=0.002 s, total=0.015 s; sync files=14, longest=0.001 s, average=0.001 s; distance=269 kB, estimate=269 kB; lsn=0/1951908, redo lsn=0/1951908
+2024-12-01 17:05:19.745 UTC [1] LOG:  database system is shut down
+2024-12-01 17:05:33.165 UTC [48] LOG:  starting PostgreSQL 17.1 (Debian 17.1-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+2024-12-01 17:05:33.167 UTC [48] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2024-12-01 17:05:33.173 UTC [52] LOG:  database system was shut down at 2024-12-01 17:05:32 UTC
+2024-12-01 17:05:33.185 UTC [48] LOG:  database system is ready to accept connections
+2024-12-01 17:05:33.388 UTC [58] LOG:  statement: SELECT 1 FROM pg_database WHERE datname = 'main' ;
+2024-12-01 17:05:33.473 UTC [60] LOG:  statement: CREATE DATABASE "main" ;
+2024-12-01 17:05:33.675 UTC [62] LOG:  statement: CREATE USER connection_user WITH PASSWORD '123';
+2024-12-01 17:05:33.694 UTC [62] LOG:  statement: CREATE TABLE users (
+	    username VARCHAR(20) PRIMARY KEY,
+	    password VARCHAR(20) NOT NULL
+	);
+2024-12-01 17:05:33.698 UTC [62] LOG:  statement: INSERT INTO users (username, password) VALUES
+	('user1', 'user1_password'),
+	('user2', 'user2_password');
+2024-12-01 17:05:33.699 UTC [62] LOG:  statement: CREATE TABLE information (
+	    column1 VARCHAR(100),
+	    column2 VARCHAR(100),
+	    column3 VARCHAR(100)
+	);
+2024-12-01 17:05:33.701 UTC [62] LOG:  statement: INSERT INTO information (column1, column2, column3) VALUES
+	('data1', 'data2', 'data3'),
+	('info1', 'info2', 'info3');
+2024-12-01 17:05:33.703 UTC [62] LOG:  statement: GRANT ALL PRIVILEGES ON DATABASE main TO connection_user;
+2024-12-01 17:05:33.704 UTC [62] LOG:  statement: GRANT ALL PRIVILEGES ON TABLE users TO connection_user;
+2024-12-01 17:05:33.705 UTC [62] LOG:  statement: GRANT ALL PRIVILEGES ON TABLE information TO connection_user;
+2024-12-01 17:05:33.719 UTC [48] LOG:  received fast shutdown request
+2024-12-01 17:05:33.722 UTC [48] LOG:  aborting any active transactions
+2024-12-01 17:05:33.728 UTC [48] LOG:  background worker "logical replication launcher" (PID 55) exited with exit code 1
+2024-12-01 17:05:33.743 UTC [50] LOG:  shutting down
+2024-12-01 17:05:33.745 UTC [50] LOG:  checkpoint starting: shutdown immediate
+2024-12-01 17:05:33.884 UTC [50] LOG:  checkpoint complete: wrote 936 buffers (5.7%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.119 s, sync=0.003 s, total=0.141 s; sync files=311, longest=0.001 s, average=0.001 s; distance=4260 kB, estimate=4260 kB; lsn=0/190E260, redo lsn=0/190E260
+2024-12-01 17:05:33.894 UTC [48] LOG:  database system is shut down
+2024-12-01 17:05:34.015 UTC [1] LOG:  starting PostgreSQL 17.1 (Debian 17.1-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+2024-12-01 17:05:34.017 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+2024-12-01 17:05:34.017 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+2024-12-01 17:05:34.025 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2024-12-01 17:05:34.042 UTC [68] LOG:  database system was shut down at 2024-12-01 17:05:33 UTC
+2024-12-01 17:05:34.083 UTC [1] LOG:  database system is ready to accept connections
+2024-12-01 17:07:45.899 UTC [1] LOG:  received fast shutdown request
+2024-12-01 17:07:45.900 UTC [1] LOG:  aborting any active transactions
+2024-12-01 17:07:45.903 UTC [1] LOG:  background worker "logical replication launcher" (PID 71) exited with exit code 1
+2024-12-01 17:07:45.903 UTC [66] LOG:  shutting down
+2024-12-01 17:07:45.906 UTC [66] LOG:  checkpoint starting: shutdown immediate
+2024-12-01 17:07:45.911 UTC [66] LOG:  checkpoint complete: wrote 49 buffers (0.3%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.003 s, sync=0.002 s, total=0.008 s; sync files=14, longest=0.001 s, average=0.001 s; distance=269 kB, estimate=269 kB; lsn=0/19518D0, redo lsn=0/19518D0
+2024-12-01 17:07:45.915 UTC [1] LOG:  database system is shut down
+2024-12-01 17:07:53.081 UTC [48] LOG:  starting PostgreSQL 17.1 (Debian 17.1-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+2024-12-01 17:07:53.082 UTC [48] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2024-12-01 17:07:53.089 UTC [52] LOG:  database system was shut down at 2024-12-01 17:07:52 UTC
+2024-12-01 17:07:53.102 UTC [48] LOG:  database system is ready to accept connections
+2024-12-01 17:07:53.217 UTC [58] LOG:  statement: SELECT 1 FROM pg_database WHERE datname = 'main' ;
+2024-12-01 17:07:53.250 UTC [60] LOG:  statement: CREATE DATABASE "main" ;
+2024-12-01 17:07:53.353 UTC [62] LOG:  statement: CREATE USER connection_user WITH PASSWORD '123';
+2024-12-01 17:07:53.364 UTC [62] LOG:  statement: CREATE TABLE users (
+	    username VARCHAR(20) PRIMARY KEY,
+	    password VARCHAR(20) NOT NULL
+	);
+2024-12-01 17:07:53.369 UTC [62] LOG:  statement: INSERT INTO users (username, password) VALUES
+	('user1', 'user1_password'),
+	('user2', 'user2_password');
+2024-12-01 17:07:53.371 UTC [62] LOG:  statement: CREATE TABLE information (
+	    column1 VARCHAR(100),
+	    column2 VARCHAR(100),
+	    column3 VARCHAR(100)
+	);
+2024-12-01 17:07:53.372 UTC [62] LOG:  statement: INSERT INTO information (column1, column2, column3) VALUES
+	('data1', 'data2', 'data3'),
+	('info1', 'info2', 'info3');
+2024-12-01 17:07:53.373 UTC [62] LOG:  statement: GRANT ALL PRIVILEGES ON DATABASE main TO connection_user;
+2024-12-01 17:07:53.374 UTC [62] LOG:  statement: GRANT ALL PRIVILEGES ON TABLE users TO connection_user;
+2024-12-01 17:07:53.375 UTC [62] LOG:  statement: GRANT ALL PRIVILEGES ON TABLE information TO connection_user;
+2024-12-01 17:07:53.377 UTC [48] LOG:  received fast shutdown request
+2024-12-01 17:07:53.378 UTC [48] LOG:  aborting any active transactions
+2024-12-01 17:07:53.382 UTC [48] LOG:  background worker "logical replication launcher" (PID 55) exited with exit code 1
+2024-12-01 17:07:53.386 UTC [50] LOG:  shutting down
+2024-12-01 17:07:53.389 UTC [50] LOG:  checkpoint starting: shutdown immediate
+2024-12-01 17:07:53.444 UTC [50] LOG:  checkpoint complete: wrote 936 buffers (5.7%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.051 s, sync=0.003 s, total=0.058 s; sync files=311, longest=0.001 s, average=0.001 s; distance=4260 kB, estimate=4260 kB; lsn=0/190E260, redo lsn=0/190E260
+2024-12-01 17:07:53.451 UTC [48] LOG:  database system is shut down
+2024-12-01 17:07:53.513 UTC [1] LOG:  starting PostgreSQL 17.1 (Debian 17.1-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+2024-12-01 17:07:53.524 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+2024-12-01 17:07:53.524 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+2024-12-01 17:07:53.527 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2024-12-01 17:07:53.541 UTC [68] LOG:  database system was shut down at 2024-12-01 17:07:53 UTC
+2024-12-01 17:07:53.552 UTC [1] LOG:  database system is ready to accept connections
+2024-12-01 17:12:53.634 UTC [66] LOG:  checkpoint starting: time
+2024-12-01 17:12:58.268 UTC [66] LOG:  checkpoint complete: wrote 49 buffers (0.3%); 0 WAL file(s) added, 0 removed, 0 recycled; write=4.630 s, sync=0.001 s, total=4.635 s; sync files=14, longest=0.001 s, average=0.001 s; distance=269 kB, estimate=269 kB; lsn=0/1951928, redo lsn=0/19518D0
+2024-12-01 17:31:40.492 UTC [1] LOG:  received fast shutdown request
+2024-12-01 17:31:40.493 UTC [1] LOG:  aborting any active transactions
+2024-12-01 17:31:40.495 UTC [1] LOG:  background worker "logical replication launcher" (PID 71) exited with exit code 1
+2024-12-01 17:31:40.495 UTC [66] LOG:  shutting down
+2024-12-01 17:31:40.496 UTC [66] LOG:  checkpoint starting: shutdown immediate
+2024-12-01 17:31:40.498 UTC [66] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.003 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=242 kB; lsn=0/19519D8, redo lsn=0/19519D8
+2024-12-01 17:31:40.501 UTC [1] LOG:  database system is shut down
+2024-12-01 17:32:00.046 UTC [49] LOG:  starting PostgreSQL 17.1 (Debian 17.1-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+2024-12-01 17:32:00.049 UTC [49] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2024-12-01 17:32:00.058 UTC [53] LOG:  database system was shut down at 2024-12-01 17:31:59 UTC
+2024-12-01 17:32:00.065 UTC [49] LOG:  database system is ready to accept connections
+2024-12-01 17:32:00.235 UTC [59] LOG:  statement: SELECT 1 FROM pg_database WHERE datname = 'main' ;
+2024-12-01 17:32:00.297 UTC [61] LOG:  statement: CREATE DATABASE "main" ;
+2024-12-01 17:32:00.390 UTC [63] LOG:  statement: CREATE USER connection_user WITH PASSWORD '123';
+2024-12-01 17:32:00.397 UTC [63] LOG:  statement: CREATE TABLE users (
+	    username VARCHAR(20) PRIMARY KEY,
+	    password VARCHAR(20) NOT NULL
+	);
+2024-12-01 17:32:00.399 UTC [63] LOG:  statement: INSERT INTO users (username, password) VALUES
+	('user1', 'user1_password'),
+	('user2', 'user2_password');
+2024-12-01 17:32:00.400 UTC [63] LOG:  statement: CREATE TABLE information (
+	    column1 VARCHAR(100),
+	    column2 VARCHAR(100),
+	    column3 VARCHAR(100)
+	);
+2024-12-01 17:32:00.402 UTC [63] LOG:  statement: INSERT INTO information (column1, column2, column3) VALUES
+	('data1', 'data2', 'data3'),
+	('info1', 'info2', 'info3');
+2024-12-01 17:32:00.403 UTC [63] LOG:  statement: GRANT ALL PRIVILEGES ON DATABASE main TO connection_user;
+2024-12-01 17:32:00.404 UTC [63] LOG:  statement: GRANT ALL PRIVILEGES ON TABLE users TO connection_user;
+2024-12-01 17:32:00.405 UTC [63] LOG:  statement: GRANT ALL PRIVILEGES ON TABLE information TO connection_user;
+2024-12-01 17:32:00.408 UTC [49] LOG:  received fast shutdown request
+2024-12-01 17:32:00.413 UTC [49] LOG:  aborting any active transactions
+2024-12-01 17:32:00.417 UTC [49] LOG:  background worker "logical replication launcher" (PID 56) exited with exit code 1
+2024-12-01 17:32:00.419 UTC [51] LOG:  shutting down
+2024-12-01 17:32:00.421 UTC [51] LOG:  checkpoint starting: shutdown immediate
+2024-12-01 17:32:00.502 UTC [51] LOG:  checkpoint complete: wrote 936 buffers (5.7%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.078 s, sync=0.002 s, total=0.084 s; sync files=311, longest=0.001 s, average=0.001 s; distance=4260 kB, estimate=4260 kB; lsn=0/190E260, redo lsn=0/190E260
+2024-12-01 17:32:00.510 UTC [49] LOG:  database system is shut down
+2024-12-01 17:32:00.563 UTC [1] LOG:  starting PostgreSQL 17.1 (Debian 17.1-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+2024-12-01 17:32:00.563 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+2024-12-01 17:32:00.563 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+2024-12-01 17:32:00.567 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2024-12-01 17:32:00.572 UTC [69] LOG:  database system was shut down at 2024-12-01 17:32:00 UTC
+2024-12-01 17:32:00.581 UTC [1] LOG:  database system is ready to accept connections
+2024-12-01 17:33:32.395 UTC [1] LOG:  received fast shutdown request
+2024-12-01 17:33:32.396 UTC [1] LOG:  aborting any active transactions
+2024-12-01 17:33:32.397 UTC [1] LOG:  background worker "logical replication launcher" (PID 72) exited with exit code 1
+2024-12-01 17:33:32.399 UTC [67] LOG:  shutting down
+2024-12-01 17:33:32.399 UTC [67] LOG:  checkpoint starting: shutdown immediate
+2024-12-01 17:33:32.403 UTC [67] LOG:  checkpoint complete: wrote 47 buffers (0.3%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.003 s, sync=0.001 s, total=0.005 s; sync files=14, longest=0.001 s, average=0.001 s; distance=247 kB, estimate=247 kB; lsn=0/194C0A0, redo lsn=0/194C0A0
+2024-12-01 17:33:32.407 UTC [1] LOG:  database system is shut down
+2024-12-01 17:35:46.157 UTC [48] LOG:  starting PostgreSQL 17.1 (Debian 17.1-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+2024-12-01 17:35:46.158 UTC [48] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2024-12-01 17:35:46.167 UTC [52] LOG:  database system was shut down at 2024-12-01 17:35:45 UTC
+2024-12-01 17:35:46.183 UTC [48] LOG:  database system is ready to accept connections
+2024-12-01 17:35:46.340 UTC [58] LOG:  statement: SELECT 1 FROM pg_database WHERE datname = 'main' ;
+2024-12-01 17:35:46.381 UTC [60] LOG:  statement: CREATE DATABASE "main" ;
+2024-12-01 17:35:46.553 UTC [62] LOG:  statement: CREATE USER connection_user WITH PASSWORD '123';
+2024-12-01 17:35:46.559 UTC [62] LOG:  statement: CREATE TABLE users (
+	    username VARCHAR(20) PRIMARY KEY,
+	    password VARCHAR(20) NOT NULL
+	);
+2024-12-01 17:35:46.562 UTC [62] LOG:  statement: INSERT INTO users (username, password) VALUES
+	('user1', 'user1_password'),
+	('user2', 'user2_password');
+2024-12-01 17:35:46.563 UTC [62] LOG:  statement: CREATE TABLE information (
+	    column1 VARCHAR(100),
+	    column2 VARCHAR(100),
+	    column3 VARCHAR(100)
+	);
+2024-12-01 17:35:46.564 UTC [62] LOG:  statement: INSERT INTO information (column1, column2, column3) VALUES
+	('data1', 'data2', 'data3'),
+	('info1', 'info2', 'info3');
+2024-12-01 17:35:46.565 UTC [62] LOG:  statement: GRANT ALL PRIVILEGES ON DATABASE main TO connection_user;
+2024-12-01 17:35:46.566 UTC [62] LOG:  statement: GRANT ALL PRIVILEGES ON TABLE users TO connection_user;
+2024-12-01 17:35:46.567 UTC [62] LOG:  statement: GRANT ALL PRIVILEGES ON TABLE information TO connection_user;
+2024-12-01 17:35:46.569 UTC [48] LOG:  received fast shutdown request
+2024-12-01 17:35:46.577 UTC [48] LOG:  aborting any active transactions
+2024-12-01 17:35:46.582 UTC [48] LOG:  background worker "logical replication launcher" (PID 55) exited with exit code 1
+2024-12-01 17:35:46.588 UTC [50] LOG:  shutting down
+2024-12-01 17:35:46.589 UTC [50] LOG:  checkpoint starting: shutdown immediate
+2024-12-01 17:35:46.661 UTC [50] LOG:  checkpoint complete: wrote 936 buffers (5.7%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.068 s, sync=0.003 s, total=0.074 s; sync files=311, longest=0.001 s, average=0.001 s; distance=4260 kB, estimate=4260 kB; lsn=0/190E260, redo lsn=0/190E260
+2024-12-01 17:35:46.666 UTC [48] LOG:  database system is shut down
+2024-12-01 17:35:46.710 UTC [1] LOG:  starting PostgreSQL 17.1 (Debian 17.1-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+2024-12-01 17:35:46.711 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+2024-12-01 17:35:46.711 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+2024-12-01 17:35:46.714 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2024-12-01 17:35:46.723 UTC [68] LOG:  database system was shut down at 2024-12-01 17:35:46 UTC
+2024-12-01 17:35:46.729 UTC [1] LOG:  database system is ready to accept connections
